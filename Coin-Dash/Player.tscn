@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/player/idle/player-idle-1.png" type="Texture" id=1]
 [ext_resource path="res://assets/player/idle/player-idle-2.png" type="Texture" id=2]
@@ -31,6 +31,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.15693, 11.0942 )
+
 [node name="Player" type="Area2D"]
 __meta__ = {
 "_edit_group_": true
@@ -41,3 +44,7 @@ frames = SubResource( 1 )
 animation = "idle"
 frame = 2
 playing = true
+offset = Vector2( 0, -5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
