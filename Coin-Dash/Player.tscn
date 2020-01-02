@@ -45,7 +45,6 @@ __meta__ = {
 scale = Vector2( 3, 3 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 2
 playing = true
 offset = Vector2( 0, -5 )
 

@@ -28,6 +28,17 @@ public class Player : Area2D
             y: Mathf.Clamp(Position.y, 0, screenSize.y)
         );
 
+        var animatedSprite = GetNode<AnimatedSprite>("AnimatedSprite");
+
+        if (velocity.Length() > 0)
+        {
+            animatedSprite.Animation = "run";
+            animatedSprite.FlipH = velocity.x < 0;
+        }
+        else
+        {
+            animatedSprite.Animation = "idle";
+        }
     }
 
     private void _GetInput()
